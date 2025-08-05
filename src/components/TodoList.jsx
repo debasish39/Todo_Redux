@@ -6,7 +6,7 @@ import 'aos/dist/aos.css';
 
 export default function TodoList() {
   useEffect(() => {
-    AOS.init({ duration: 600, once: false });
+    AOS.init({ duration: 100, once: true });
   }, []);
 
   const filteredTodos = useSelector((state) => {
