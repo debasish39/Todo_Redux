@@ -2,3 +2,29 @@
 boby{
     background-color: #f3f4f6;
 }
+body{
+    @apply bg-gradient-to-bl from-[#27272a] via-[#52525b] to-[#a1a1aa] min-h-screen;
+}
+::selection{
+    background-color: transparent;
+    color:rgb(55, 5, 52);
+}
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgba(173, 170, 170, 0.796); /* width of scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(87, 92, 49, 0.396); /* track color */
+  border-radius: 39px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #710832, #a9c9ff, #ffdde1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #8b0532, #94bfff, #ffc2cc);
+}

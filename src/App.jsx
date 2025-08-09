@@ -10,7 +10,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <Router>
-        <div className="overflow-hidden">
+        <div className="overflow-hidden  ">
           <Toaster position="top-center" />
           <Routes>
             <Route path="/" element={<Todo />} />
