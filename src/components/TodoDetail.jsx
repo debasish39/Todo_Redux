@@ -43,7 +43,7 @@ export default function TodoDetail() {
       {/* Back Button */}
       <button
         onClick={() => navigate('/')}
-        className="mb-6 px-3 py-1 border border-gray-300 text-gray-700 flex items-center gap-2 rounded hover:text-blue-700 hover:border-blue-400 transition"
+        className="mb-6 px-3 py-1 border border-gray-300 text-gray-700 flex items-center gap-2 rounded hover:text-blue-700 hover:border-blue-400 transition cursor-pointer"
       >
         <FiArrowLeft size={16} />
         Back to List
@@ -80,7 +80,7 @@ export default function TodoDetail() {
         {isEditing ? (
           <button
             onClick={handleSave}
-            className="flex items-center gap-1 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+            className="flex items-center gap-1 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition cursor-pointer"
           >
             <FiSave />
             Save
@@ -88,7 +88,7 @@ export default function TodoDetail() {
         ) : (
           <button
             onClick={() => setIsEditing(true)}
-            className="flex items-center gap-1 bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition"
+            className="flex items-center gap-1 bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition cursor-pointer"
           >
             <FiEdit />
             Edit
@@ -97,7 +97,7 @@ export default function TodoDetail() {
 
         <button
           onClick={handleToggle}
-          className="flex items-center gap-1 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+          className="flex items-center gap-1 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition cursor-pointer"
         >
           {todo.completed ? <FaToggleOn /> : <FaToggleOff />}
           {todo.completed ? 'Undo' : 'Complete'}
@@ -105,7 +105,7 @@ export default function TodoDetail() {
 
         <button
           onClick={handleDelete}
-          className="flex items-center gap-1 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
+          className="flex items-center gap-1 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition cursor-pointer"
         >
           <FaTrash />
           Delete

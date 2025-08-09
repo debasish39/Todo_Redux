@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
@@ -10,22 +10,26 @@ export default function TodoList() {
   }, []);
 
   const filteredTodos = useSelector((state) => {
-    const { todos, filter, searchTerm } = state;
-    return todos.filter((todo) => {
-      const matchesFilter =
-        filter === 'ALL' ||
-        (filter === 'COMPLETED' && todo.completed) ||
-        (filter === 'INCOMPLETE' && !todo.completed);
+    const todos = state.todos;
+    const filter = state.filter;
+    const searchTerm = state.searchTerm.toLowerCase(); // Convert search term to lowercase for case-insensitive search
 
-      const matchesSearch = todo.text.toLowerCase().includes(searchTerm.toLowerCase());
+    return todos.filter((todo) => {
+      const matchesFilter = (filter === 'COMPLETED' && todo.completed) ||
+        (filter === 'INCOMPLETE' && !todo.completed) ||
+        filter === 'ALL';
+
+      const matchesSearch = todo.text.toLowerCase().includes(searchTerm);
+
       return matchesFilter && matchesSearch;
     });
   });
 
+  console.log('Filtered Todos:', filteredTodos);
   return (
     <ul className="space-y-4">
       <h1
-        className='ml-1 text-xl underline text-blue-700'
+        className="ml-1 text-xl underline text-blue-700"
         style={{ fontFamily: "'Lobster', cursive" }}
         data-aos="fade-down"
       >
@@ -33,14 +37,27 @@ export default function TodoList() {
       </h1>
 
       {filteredTodos.length === 0 ? (
-        <p className="text-center text-gray-500" data-aos="fade-in">No todos found.</p>
+        <p
+          className="text-center text-gray-500"
+          data-aos="fade-in"
+        >
+          No todos found.
+        </p>
       ) : (
         filteredTodos.map((todo, index) => (
-          <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+          <div key={index} data-aos="fade-up ">
             <li className="p-4 bg-white rounded shadow">
-              <div className='flex items-center justify-between gap-3'>
-                <p className={`${todo.completed ? 'line-through text-gray-500' : ''}`}>
-                  {todo.text.length > 30 ? `${todo.text.slice(0, 18)}...` : todo.text}
+              <div className="flex items-center justify-between gap-3">
+                <p
+                  className={
+                    todo.completed
+                      ? 'line-through text-gray-500'
+                      : ''
+                  }
+                >
+                  {todo.text.length > 30
+                    ? `${todo.text.slice(0, 18)}...`
+                    : todo.text}
                 </p>
 
                 <Link

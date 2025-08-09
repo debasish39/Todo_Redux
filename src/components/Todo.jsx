@@ -60,7 +60,7 @@ export default function Todo() {
           className="flex-grow p-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 text-sm rounded sm:rounded-none"
         />
         <button
-          className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+          className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition cursor-pointer"
           onClick={handleAddToDoClick}
         >
           <BsPlus size={22} />
@@ -69,7 +69,7 @@ export default function Todo() {
 
       {/* Filter and Search */}
       <div
-        className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 mb-4"
+        className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 mb-4 cursor-pointer"
         data-aos="fade-left"
       >
         <FilterButton />
@@ -82,7 +82,7 @@ export default function Todo() {
             onChange={(e) => handleSearchChange(e.target.value)}
             className="p-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 text-sm rounded sm:rounded-none flex-grow sm:w-64"
           />
-          <button className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+          <button className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition cursor-pointer">
             <BsSearch size={20} />
           </button>
         </div>
