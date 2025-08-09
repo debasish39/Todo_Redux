@@ -91,13 +91,13 @@ export default function Todo() {
           <FilterButton />
         </div>
 
-        <div className="flex flex-row justify-center items-stretch sm:items-center gap-3 w-full sm:w-auto">
+        <div className="flex flex-row justify-between items-stretch sm:items-center gap-3 w-full sm:w-auto">
           <input
             type="text"
             placeholder="🔍 Search Todos..."
             value={searchTerm}
             onChange={(e) => handleSearchChange(e.target.value)}
-            className="px-4 py-3 rounded-lg border border-white/30 bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring focus:ring-blue-200/50 transition-all duration-300 ease-in-out hover:shadow-lg"
+            className="px-3 w-fullsm:px-4 sm:py-3 rounded-lg border border-white/30 bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring focus:ring-blue-200/50 transition-all duration-300 ease-in-out hover:shadow-lg"
           />
           <button className="px-4 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold shadow-lg hover:scale-105 hover:shadow-xl active:scale-95 transition-all duration-300 ease-in-out cursor-pointer">
             <BsSearch size={20} />

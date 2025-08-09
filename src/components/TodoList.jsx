@@ -54,24 +54,24 @@ export default function TodoList() {
             <div
               key={index}
               data-aos="fade-up"
-              data-aos-delay={index * 100}
-              className="transition-transform duration-300 hover:scale-[1.02] active:scale-[1.02]"
+             
+              className="transition-transform duration-300 hover:scale-[1.02] active:scale-[1.02]  "
             >
               <li
-                className={`p-4 rounded-xl backdrop-blur-lg border shadow-md hover:shadow-xl transition-all duration-300 ${
+                className={`p-4 rounded-xl backdrop-blur-lg border shadow-md hover:shadow-xl transition-all duration-300 mb-9 ${
                   isActive
                     ? 'border-2 border-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-border'
                     : 'bg-white/10 border-white/20'
                 }`}
               >
-                <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center justify-between gap-3 ">
                   {/* Todo Text */}
                   <p
                     className={`text-white ${
                       todo.completed ? 'line-through opacity-60' : ''
                     }`}
                   >
-                    {todo.text.length > 30
+                    {todo.text.length > 18
                       ? `${todo.text.slice(0, 18)}...`
                       : todo.text}
                   </p>
